@@ -91,7 +91,8 @@ $(function(){
             $this.addClass('active').siblings().removeClass('active');
         });
 })
-    
+```
+
 ### TOOL相关
 #### gulp相关
 * 
