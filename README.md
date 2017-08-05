@@ -41,12 +41,6 @@
 * 不定高盒子内不定高内容的垂直居中方法：
   1.flex布局
   2.padding-bottom+margin-bottom组合使用
-  ```html
-    
-  ```
-  ```css
-    
-  ```
 
 ### JS相关
 * 无痕浏览模式下，localStorage、sessionStorage是禁用的，可使用cookie；
