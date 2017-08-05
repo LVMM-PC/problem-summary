@@ -36,9 +36,19 @@
     }
 ```
 ### CSS相关
-* 不定高盒子内不定高内容的垂直居中方法：
-  1.flex布局
-  2.padding-bottom+margin-bottom组合使用
+* 不定高盒子内多个内容的100%高度自适应方法：  
+```html
+<div>
+    <div class="div-left">里面有100行的字</div>
+    <div class="div-right">里面有1行的字</div>
+</div>
+```
+```css
+.div-left,.div-right{
+    padding-bottom:10000px;
+    margin-bottomL:-10000px
+}
+```
 
 ### JS相关
 * 无痕浏览模式下，localStorage、sessionStorage是禁用的，可使用cookie；
