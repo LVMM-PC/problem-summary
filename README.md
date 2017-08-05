@@ -87,32 +87,34 @@ $(function(){
 })
 ```
 
-* 在监听scroll或者resize事件时，如果handler开销比较大时；
-   >1.需要将handler中不必要的操作提取出来，提前计算
-   >2.需要引入节流函数来优化性能
-   >3.考虑在过程中设置pointer-events: none 禁止鼠标事件
- ```js
-    //一个简单的节流函数实现
-    function throttle(func, wait, mustRun) {
-        var timeout,
-            startTime = new Date();
+* 在监听scroll或者resize事件时，如果handler开销比较大时；  
 
-        return function() {
-            var context = this,
-                args = arguments,
-                curTime = new Date();
-            clearTimeout(timeout);
-            // 如果达到了规定的触发时间间隔，触发 handler
-            if(curTime - startTime >= mustRun){
-                func.apply(context,args);
-                startTime = curTime;
-                // 没达到触发间隔，重新设定定时器
-            }else{
-                timeout = setTimeout(func, wait);
-            }
-        };
+    > 1.需要将handler中不必要的操作提取出来，提前计算  
+2.需要引入节流函数来优化性能  
+3.考虑在过程中设置pointer-events: none 禁止鼠标事件  
+    
+```js
+//一个简单的节流函数实现
+function throttle(func, wait, mustRun) {
+    var timeout,
+        startTime = new Date();
+
+    return function() {
+        var context = this,
+            args = arguments,
+            curTime = new Date();
+        clearTimeout(timeout);
+        // 如果达到了规定的触发时间间隔，触发 handler
+        if(curTime - startTime >= mustRun){
+            func.apply(context,args);
+            startTime = curTime;
+            // 没达到触发间隔，重新设定定时器
+        }else{
+            timeout = setTimeout(func, wait);
+        }
     };
-    ```
+};
+```
 
 ### TOOL相关
 #### gulp相关
