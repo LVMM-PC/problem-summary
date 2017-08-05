@@ -28,9 +28,7 @@
             if (input.val() == '' || input.val() == input.attr('placeholder')) {
                 input.addClass('placeholder');
                 input.val(input.attr('placeholder'));
-                console.log(1)
             }
-            console.log(2)
         }).blur();
     };
     function placeholderSupport() {
